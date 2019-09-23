@@ -38,9 +38,12 @@
 
 在win10中Path 变量里是分条显示的，我们需要将 %JAVA_HOME%\bin;和%JAVA_HOME%\jre\bin; 分开添加，否则无法识别
 ```
-%JAVA_HOME%\bin;
-%JAVA_HOME%\jre\bin;
+%JAVA_HOME%\bin
+%JAVA_HOME%\jre\bin
 ```
+
+注:配置完可能需要重启
+
 ### 三、JDK目录结构讲解
 
 * bin：存放java可执行文件，
