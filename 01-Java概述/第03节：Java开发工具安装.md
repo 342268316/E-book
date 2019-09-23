@@ -68,3 +68,4 @@ idea是当前最受欢迎Java ide，本手册的所有代码都是推荐使用id
  ![create](../images/0103_status.png)  
  ![create](../images/0103_status2.png)  
  5. 运行成功  
+ * 注：这里只是教学如何运行项目，让同学们对运行项目的流程有所了解，下一节会为同学们解析这段代码
