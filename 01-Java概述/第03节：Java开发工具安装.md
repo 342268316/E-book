@@ -1,10 +1,11 @@
 # 第03节：Java开发工具
+本节我们来安装一个用于java开发的编辑器
+### 一、记事本写java和编辑器写java的区别
 
-### 一、常用的开发工具
+有些教程最开始都会用记事本演示如何开发Java程序，这里不建议使用记事本演示开发java程序。
+记事本的优点是可以更直观的表达出java项目从创建到启动的流程，不过相对于编辑器而言编辑器更加易懂方便。
 
-很多教程最开始都会用技术本演示如何开发Java程序，这里非常不建议使用这种方法。
-
-下来说说常见的Java编辑器
+#### 下来说说常见的Java编辑器
 
 #### eclipse
 
@@ -33,39 +34,16 @@ idea是当前最受欢迎Java ide，本手册的所有代码都是推荐使用id
  ![down](../images/0103_down2.png)
 ### 四、破解idea
  正版的idea软件是需要收费的，首先强调一遍：各位有能力的请尽量支持正版！ 
- 1. 先下载jar包JetbrainsCrack.jar，把它放到你认为合适的文件夹内，我直接放在了安装目录C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\bin。
- JetbrainsCrack.jar[下载地址](https://pan.baidu.com/s/1FiYnAqSdhvSh3nbMZAcHPA)。提取码：2b7a  
+ 1. 先下载jar包JetbrainsCrack-4.2-release-enc.jar，把它放到你认为合适的文件夹内，我直接放在了安装目录C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\bin。
+ JetbrainsCrack-4.2-release-enc.jar[下载地址](https://pan.baidu.com/s/1FiYnAqSdhvSh3nbMZAcHPA)。提取码：2b7a  
  2. 划重点，修改配置文件：不能直接在bin目录下直接修改，先打开idea试用30天，然后点击你要注册的IDE菜单：“Help” -> “Edit Custom VM Options …”，如果提示是否要创建文件，请点"是|Yes"。  
  ![down](../images/0103_vm.png)
- 3. 在打开的vmoptions编辑窗口末行添加：-javaagent:JetbrainsCrack.jar文件的绝对路径（一定要自己确认好路径，填错会导致IDE打不开！！！）  
+ 3. 在打开的vmoptions编辑窗口末行添加：-javaagent:JetbrainsCrack-4.2-release-enc.jar文件的绝对路径（一定要自己确认好路径，填错会导致IDE打不开！！！）  
 
-    如我的路径: -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\bin\JetbrainsCrack.jar  
- ![down](../images/0103_path.png)
+    如我的路径: -javaagent:E:\IntelliJ IDEA Community Edition 2019.2.2\bin\JetbrainsCrack-4.2-release-enc.jar  
+ ![down](../images/0103_path.png)  
 4. 重新启动你的IDEA。  
 注册"Help" -> “Register”，选择License server方式，地址填入：http://jetbrains-license-server （应该会自动填上）  
 看到Licensed to 用户名，即激活成功。  
-#### 创建项目
-1. 打开idea软件，点击界面上的Create New Project  
- ![create](../images/0103_create.png)  
-2. 出现以下界面，选中Java，然后选择jdk，最后点击Next，进行下一步  
- ![create](../images/0103_create2.png)  
-3. 这里是选择生成项目时是否创建java文件，勾选上Java Hello World后会生成一个默认的Hello world文件，点击Next进行下一步  
- ![create](../images/0103_create3.png)  
-4. 给项目命名，默认是untiled，自己填个名字吧，最后点击finish  
- ![create](../images/0103_create4.png)  
-5. 项目创建完成
 
-
-#### 运行项目
- 1. 点击src——>new——>package，创建一个文件包，并给包命名，与Eclipse的包类似；  
- ![create](../images/0103_create5.png)  
- 2. 在包下面创建java类文件，点击包名——>New——>Java Class;  
- ![create](../images/0103_create6.png)  
- 3. 写入代码  
- ![create](../images/0103_create7.png)  
- 4. 运行java文件，点击上方工具栏中的Run——>Run......;
- 出现以下弹框，点击要运行的文件名，这里是Hello；  
- ![create](../images/0103_status.png)  
- ![create](../images/0103_status2.png)  
- 5. 运行成功  
- * 注：这里只是教学如何运行项目，让同学们对运行项目的流程有所了解，下一节会为同学们解析这段代码
+*总结：本章我们安装了开发工具IDEA，下一节我们将会学习创建一个java案例。
