@@ -65,15 +65,3 @@ JavaEE提供了企业级的解决方案，学习JavaEE之前要打好JavaSE的�
 
 JDK是Java Development Kit 的缩写，中文称为Java开发工具包，由SUN公司提供。它为Java程序开发提供了编译和运行环境，所有的Java程序的编写都依赖于它。使用JDK可以将Java程序编写为字节码文件，即.class文件。
 开发Java需要安装JDK和JRE
-
-* JDK（Java Development Kit）是java开发工具包
-* JRE（Java Runtime Environment）是Java运行环境
-
-JDK包括JRE，JVM在JRE之内？
-
-Jre 是java runtime environment, 是java程序的运行环境。既然是运行，当然要包含jvm，也就是大家熟悉的虚拟机啦，还有所有java类库的class文件，都在lib目录下打包成了jar。大家可以自己验证。至于在windows上的虚拟机是哪个文件呢？学过MFC的都知道什么是dll文件吧，那么大家看看jre/bin/client里面是不是有一个jvm.dll呢？那就是虚拟机。
-
-Jdk 是java development kit，是java的开发工具包，里面包含了各种类库和工具。当然也包括了另外一个Jre. 那么为什么要包括另外一个Jre呢？而且jdk/jre/bin同时有client和server两个文件夹下都包含一个jvm.dll。说明是有两个虚拟机的。这一点不知道大家是否注意到了呢？
-
-安装JDK之后，就已经安装了JRE
-  
