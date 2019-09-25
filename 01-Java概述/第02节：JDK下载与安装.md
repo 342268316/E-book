@@ -80,4 +80,8 @@ java -version //查询版本
 java //执行你编译的class文件。
 javac //将java文件编译成class文件
 ```
-成功则安装成功
+
+
+
+出现以下信息则安装成功
+![JDK安装](../images/0102_JDK.png)
