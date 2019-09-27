@@ -12,8 +12,22 @@
  ![Image text](../images/0103_create4.png)  
 5. 项目创建完成
 
+### 二、创建类与运行项目
+ 1. 点击src——>new——>package，创建一个文件包，并给包命名，与Eclipse的包类似；  
+ ![Image text](../images/0103_create5.png)  
+ 2. 在包下面创建java类文件，点击包名——>New——>Java Class;  
+ ![Image text](../images/0103_create6.png)  
+ 3. 写入代码  
+ ![Image text](../images/0103_create7.png)  
+ 4. 运行java文件，点击上方工具栏中的Run——>Run......;
+ 出现以下弹框，点击要运行的文件名，这里是Hello;
+ ![Image text](../images/0103_status.png)  
+ ![Image text](../images/0103_status2.png)  
+ 5. 运行成功  
+ * 注：这里只是教学如何运行项目，让同学们对运行项目的流程有所了解
 
-### 二、在控制台输出Hello world
+
+### 三、在控制台输出Hello world
 
 开始学习任何一门编程语言做的第一件事都习惯性地输出Hello_world。前三节我们已经安装和配置好了开发环境，本节就从一个Hello_world案例开始。
 
@@ -32,7 +46,7 @@ public class Hello {
 }
 ```
 
-### 三、代码讲解
+### 四、代码讲解
 
 在上面的程序当中，我们创建了一个名为Main的类，Main类中有个HelloWorld方法。类和方法的概念我们会在第三章详细讲解，这里大家只要知道main方法是整个程序的入口方法。所有的程序都从这里开始执行。我们输出的Hello world其实只需要一行代码。
 
@@ -40,7 +54,7 @@ public class Hello {
 System.out.println("Hello World!");
 ```
 
-### 四、注释
+### 五、注释
 
 代码中有一部分用作程序的备注，这些内容不被执行，他们就是注释
 
@@ -57,20 +71,6 @@ System.out.println("Hello World!");
  */
 ```
 关于注释，我们后续还有进一步的讲解。
-
-### 五、运行项目
- 1. 点击src——>new——>package，创建一个文件包，并给包命名，与Eclipse的包类似；  
- ![Image text](../images/0103_create5.png)  
- 2. 在包下面创建java类文件，点击包名——>New——>Java Class;  
- ![Image text](../images/0103_create6.png)  
- 3. 写入代码  
- ![Image text](../images/0103_create7.png)  
- 4. 运行java文件，点击上方工具栏中的Run——>Run......;
- 出现以下弹框，点击要运行的文件名，这里是Hello;
- ![Image text](../images/0103_status.png)  
- ![Image text](../images/0103_status2.png)  
- 5. 运行成功  
- * 注：这里只是教学如何运行项目，让同学们对运行项目的流程有所了解
 
 ### 六、总结
 
