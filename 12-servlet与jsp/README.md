@@ -1,5 +1,24 @@
 # 第十二章：servlet
 
+### servlet概述
+
+* servlet基本概念
+* servlet生命周期
+* 使用IDEA创建servlet项目
+
+### 第一个servlet实例
+
+* 创建servlet类
+* 处理请求
+* 处理表单数据
+
+
+### servlet规范三大组件
+
+* servlet
+* listener
+* filter
+
 * servlet概述
 * 创建一个servlet类
 * servlet的生命周期
