@@ -6,7 +6,7 @@
 * servlet生命周期
 * 使用IDEA创建servlet项目
 
-### 第一个servlet实例
+### servlet基础知识
 
 * 创建servlet类
 * 处理请求
