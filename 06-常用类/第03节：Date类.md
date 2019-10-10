@@ -78,7 +78,7 @@ System.currentTimeMillis()会返回long类型值，这段代码会获取从 1970
 
 ```
 ### 五、Calendar,另一种日期方法
-Calendar方法为操作日历方面提供了一些方法，请看如下代码([代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/DateTest03.java))：  
+Calendar方法为操作日历方面提供了一些方法，请看如下代码[代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/DateTest03.java)：  
 ``` java
  //输出今天是这周的第几天
     Calendar c= Calendar.getInstance();
@@ -98,7 +98,7 @@ Calendar方法为操作日历方面提供了一些方法，请看如下代码([�
 ### 代码实例
 接下来我们做一个小练习：算一下你来到这个世界多少天?  
 
-分析：获取出生日期和当前日期的Date类型，然后将两个日期的毫秒值做减法，之后用这个毫秒值除以1000,再除以60,再除以60,再除以24得到天。[代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/Exercise01.java)]  
+分析：获取出生日期和当前日期的Date类型，然后将两个日期的毫秒值做减法，之后用这个毫秒值除以1000,再除以60,再除以60,再除以24得到天。[代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/Exercise01.java)  
 ``` java
 public class Exercise01 {
     public static void main(String[] args) throws ParseException {
