@@ -8,38 +8,54 @@
 与set不同，列表通常允许重复的元素。 更正式地，列表通常允许元素e1和e2成对使得e1.equals(e2) ，并且如果它们允许空元素，它们通常允许多个空元素，list集合的特点就是有序和可重复。
 
 
-### List集合的方法
+### List特有的方法
 
 List中除了Collection里面的方法以外，内部还有一些方法，通过这些方法，开发者可以更方便的操作List接口的实现类。List接口是继承Collection接口，所以Collection集合中有的方法，List集合也继承过来。
-
-List集合的三种取值方式：for循环、foreach循环、Iterator迭代器。
+使用for循环遍历数组
 
 ```java
 
+ import java.util.ArrayList;
+ import java.util.List;
+ import java.util.Iterator;
  List list=new ArrayList();
 		list.add("a");
 		list.add("b");
 		list.add("d");
 		list.add("a");
-                //List集合的取值
-		//方法一
+
+
 		for (int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
-		}
-		
-		//方法二
-		for (Object s : list) {
-			System.out.println(s);
-		}
-		
-		//方法三
-		Iterator it = list.iterator();
-		while(it.hasNext()) {
-			System.out.print(it.next());
 		}
 
 ```
 
+
+使用ListIterator完成需求，判断一个list里是否有c，如果有就像集合里添加1234
+```java
+
+import java.util.List;
+import java.util.ListIterator;
+
+public class ListTest {
+
+    public static void main(String[] args){
+        List list = new ArrayList();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        ListIterator lsititer = list.listIterator();
+        while (lsititer.hasNext()){
+            String s = (String)lsititer.next();
+            if("c".equals(s)){
+                //不能使用list中的add方法要使用ListIterator中的add方法
+                lsititer.add("1234");
+            }
+        }
+	System.out.println(list);
+
+```
 List集合移除对象的注意事项：比如我想移除List集合里的奇数，用for循环不能将奇数都移除掉，因为用for循环时，List里的对象的位置会往前移，会漏掉；用foreach也不能将奇数都移除掉，因为用foreach时不能改变集合的长度，会报java.util.ConcurrentModificationException当前集合改变异常；用迭代器则可以把所有的奇数都移除掉，因为用迭代器时，List里对象的位置是不变的，所以能全部移除掉。
 
 4、List集合的调优：List集合本质就是可变长度的数组，它的默认初始容量是10，负载因子是0.5，如果要做List集合的调优的话，根据实际的业务场景制定初始容量即可。

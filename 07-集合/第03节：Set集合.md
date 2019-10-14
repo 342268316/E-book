@@ -16,6 +16,28 @@ HashSet具有以下特点：
 * HashSet不是同步的；
 * 集合元素值可以是null；
 
+
+```java
+
+import java.util.HashSet;
+import java.util.Set;
+public class HashSetTest {
+
+    public static void main(String [] args){
+        Set<String> set = new HashSet<>();
+        boolean b1 = set.add("a");
+        boolean b2 = set.add("a");
+        System.out.println(b1);
+        System.out.println(b2);
+        System.out.println(set.size());
+        System.out.println(set);
+        //因为set集合的元素不能重复
+    }
+}
+
+```
+
+
 内部存储机制
 
 当向HashSet集合中存入一个元素时，HashSet会调用该对象的hashCode方法来得到该对象的hashCode值，然后根据该hashCode值决定该对象在HashSet中的存储位置。如果有两个元素通过equals方法比较true，但它们的hashCode方法返回的值不相等，HashSet将会把它们存储在不同位置，依然可以添加成功。

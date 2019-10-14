@@ -6,17 +6,8 @@
 
 #### Map接口
 
- 数据都是键值对，2种遍历方式，keySet、EntrySet
-              HashMap–类：键值都可以为null值，线程不安全的
-              Hashtable–类：键和值都不能为null值，线程安全的
-              TreeMap–类：键不能为null值，value值可以为null值
-               按照数据的自然顺序存放（升序），数据类型需要兼容，不能存放null
-                      数字：从小到大顺序
-                     英文：字典顺序顺序
-                     类：需要实现comparable接口或者自定义比较器comparator
-
 Map接口概述
-* 查看API可以知道：
+
 * 将键映射到值的对象
 * 一个映射不能包含重复的键
 * 每个键最多只能映射到一个值
@@ -53,16 +44,24 @@ public class Demo1_Map {
 		System.out.println(i3);
 		System.out.println(i4);
 		System.out.println(i5);
+		//判断map中是否包含传入的Key
+		System.out.println(map.containsKey(24));
+		//判断map中是否包含传入的Value
+		System.out.println(map.containsValue("李四"));
+		//判断Map中的长度
+		System.out.println(map.size());
+		//获取map中的value
+		Collection<String> c = map.values();
+		System.out.println(c);
 	}
 
 ```
 
 删除功能
-* void clear():移除所有的键值对元素
+* map clear():移除所有的键值对元素
 * V remove(Object key)：根据键删除键值对元素，并把值返回
 
 ```java
-
 
 import java.util.HashMap;
 import java.util.Map;
@@ -79,5 +78,62 @@ public class Demo1_Map {
 		Integer i1Value=map.remove("张三"); 
 		System.out.println(i1Value);
 		System.out.println(map);
+		//清除所有的元素
+		map.clear();
+
+```
+
+遍历Map集合的方法有两个
+
+```java
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Set;
+
+public class MapTest {
+    public static void main(String[] args){
+        Map<Integer,String> map = new HashMap<>();
+        map.put(1,"甘");
+        map.put(2,"文");
+        map.put(3,"璀");
+        map.put(4,"山");
+
+        Set<Integer> keySet = map.keySet();
+        Iterator<Integer> iter = keySet.iterator();
+        //遍历获取到key之后即可获取相应的value
+        while(iter.hasNext()){
+            Integer key = iter.next();
+            System.out.println(key+map.get(key));
+        }
+    }
+}
+
+```
+
+```java
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Set;
+
+public class MapTest {
+    public static void main(String[] args){
+        Map<Integer,String> map = new HashMap<>();
+        map.put(1,"甘");
+        map.put(2,"文");
+        map.put(3,"璀");
+        map.put(4,"山");
+
+        Set<Map.Entry<Integer,String>> entrySet = map.entrySet();
+        Iterator<Map.Entry<Integer, String>> iter = entrySet.iterator();
+        while(iter.hasNext()){
+            Map.Entry<Integer,String > entry = iter.next();
+            Integer key = entry.getKey();
+            String value = entry.getValue();
+            System.out.println(key+value);
+        }
 
 ```
