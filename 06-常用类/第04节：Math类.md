@@ -7,7 +7,7 @@
 ### Math类型的重要属性
 让我们通过以下代码来学习掌握Math类关键字方法的使用[代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC04%E8%8A%82%EF%BC%9AMath%E7%B1%BB/Math/MathTest01.java)：  
 ```java
-public static void main(String args[]){
+public static void main(String[] args){
         //圆周率
         System.out.println(Math.PI);
         //取绝对值
