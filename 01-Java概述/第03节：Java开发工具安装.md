@@ -34,18 +34,9 @@ idea是当前最受欢迎Java ide，本手册的所有代码都是推荐使用id
  ![down](../images/0103_down2.png)
 ### 四、破解idea
 
-1. 安装完成后，启动软件，出现以下界面  
- ![down](../images/0103_az.png)  
- 填写相关信息   License server address:  http://idea.congm.in/  
- ![down](../images/0103_az2.png)  
- 点击  Activate  完成破解  
-
- 2. 修改系统时间的方法
-安装前将系统时间需改为一个比较远的时间，如2050年，修改后安装 IntelliJ IDEA ，安装后选择试用，全部步骤完毕并关闭 IntelliJ IDEA 后，将系统时间修改回来。  
-
  正版的idea软件是需要收费的，首先强调一遍：各位有能力的请尽量支持正版！ 
- <!-- 1. 先下载jar包JetbrainsCrack-4.2-release-enc.jar，把它放到你认为合适的文件夹内，我直接放在了安装目录C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\bin。
- JetbrainsCrack-4.2-release-enc.jar可以关注微信公众号【程序员的成长之路】回复【104】获取
+ 1. 先下载jar包JetbrainsCrack-4.2-release-enc.jar，把它放到你认为合适的文件夹内，我直接放在了安装目录C:\Program Files\JetBrains\IntelliJ IDEA 2019.1\bin。  
+ [JetbrainsCrack-4.2-release-enc.jar下载地址](https://zhile.io/2018/08/25/jetbrains-license-server-crack.html)
  2. 划重点，修改配置文件：不能直接在bin目录下直接修改，先打开idea试用30天，然后点击你要注册的IDE菜单：“Help” -> “Edit Custom VM Options …”，如果提示是否要创建文件，请点"是|Yes"。  
  ![down](../images/0103_vm.png)
  3. 在打开的vmoptions编辑窗口末行添加：-javaagent:JetbrainsCrack-4.2-release-enc.jar文件的绝对路径（一定要自己确认好路径，填错会导致IDE打不开！！！）  
@@ -54,6 +45,6 @@ idea是当前最受欢迎Java ide，本手册的所有代码都是推荐使用id
  ![down](../images/0103_path.png)  
 4. 重新启动你的IDEA。  
 注册"Help" -> “Register”，选择License server方式，地址填入：http://jetbrains-license-server （应该会自动填上）  
-看到Licensed to 用户名，即激活成功。   -->
+看到Licensed to 用户名，即激活成功。  
 
 *总结：本章我们安装了开发工具IDEA，下一节我们将会学习创建一个java案例。
