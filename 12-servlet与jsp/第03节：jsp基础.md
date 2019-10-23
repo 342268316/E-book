@@ -52,10 +52,28 @@ JSP全称是Java Server Pages，是一种动态网页技术，JSP其实就是在
 ```
 
 ### 四、jsp中的内置对象
+为了便于开发者的使用，在JSP引擎将JSP翻译为.java文件时，会提供9个与web开发相关的对象被称为JSP中9个内置对象，开发者在JSP中可以直接使用这些对象调用的方法，这九个内置对象的引用名分别是：pageContext，request,session,application,response,config,out,page,exception。  
+![dx](../images/1203_dx.png)  
+通过查看源码可以看到这些对象的定义。  
+![dx](../images/1203_ym.png)  
+* pageContext
+页面上下文，通过该对象中的setAttribute和getAttribute方法设置访问范围只在当前页面中有效的数据，不过在当前页面范围中，数据都是可以直接使用的，所以该对象不常用
+* out
+该类型继承了IO流中的Writer，所以out是一个输出流对象，使用方法上跟PrintWriter类似。
+* page
+通过源码中可以看到，将this赋值给page，所以该对象就是servlet自己，在实际应用中不常使用
+* exception
+该对象通常配合page指令使用，后面再详解
+* application
+该对象和下面的对象的使用方法跟servlet中的一样
+* request
+* response
+* session
+* config
+在开发或学习中，如果需要使用上面的这些java对象时，无需自己创建，直接拿来使用就是了。这九个JSP的内置对象一定要记住，有时面试的时候会问到。
+<!-- 在jsp技术中，有些变量是需要声明之后才能应用的，而有些变量不需要在jsp的脚本语言里声明就能够使用的，被称为jsp页面的内置对象，内置对象有request、response、session、application；下面逐个进行介绍。   -->
 
-在jsp技术中，有些变量是需要声明之后才能应用的，而有些变量不需要在jsp的脚本语言里声明就能够使用的，被称为jsp页面的内置对象，内置对象有request、response、session、application；下面逐个进行介绍。  
-
-一、request对象  
+<!-- 一、request对象  
 
 顾名思义，request是处理请求信息的对象；用户和服务器之间进行交互是通过遵守“http协议”进行的，“http协议”又叫“请求与响应”协议，当用户通过在浏览器地址栏里输入服务器的地址和页面的名字来请求该页面时，就向服务器发送了一个请求，这个请求里包含了客户的请求信息，被封装在request对象里，通过request对象的响应方法来调取信息；  
 
@@ -90,9 +108,6 @@ JSP全称是Java Server Pages，是一种动态网页技术，JSP其实就是在
 ![n](../images/1203_inp.jpg)  
 注意:此处代码的第18行必须加入异常处理，因为当第一次打开页面时变量str1为空值，此时不能作类型转换。  
 
-<!-- （2）处理汉字信息  
-
-当用request对象获取信息时可能出现中文乱码问题，这里可以采用以下办法：对获取的信息作重新编码，如：Stinger str=request.getParameter("name");Byte b[]=str.getByte("ISO-8859-1");str=new String(b);例子如下：   -->
 
 *  getProtocol():获取请求使用的通信协议；
 *  getServletPath():获取请求的jsp页面所在的目录；
@@ -113,4 +128,4 @@ JSP全称是Java Server Pages，是一种动态网页技术，JSP其实就是在
 （1）改变contentType属性的值
 
 在page指令中，contentType属性只能被赋值一次，但在动态的回应用户这方面是极不方便的，而通过response对象的setContentType（String s）方法就可以实现这一点，其中s可以取值为text/html,text/plain,image/gif,image/jpeg,image/x-xbitmap,image/pjpeg,application/x-shockwave-flash,application/vnd.ms-powerpoint,application/vnd.ms-excel,application/msword等，实例如下：
-
+ -->
