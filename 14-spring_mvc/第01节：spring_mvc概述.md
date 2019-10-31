@@ -43,9 +43,9 @@ SpringMVC不仅仅是MVC的实现，它还是一个框架。这意味着，除�
 ### 五、我的第一个spring-MVC程序
 #### 一、创建项目
 ##### 1、IDEA创建项目
-新建一个maven project，并且选择webapp原型。
-![images](../images/1401_imgs.png)
-然后点击next
+新建一个maven project，并且选择webapp原型。  
+![images](../images/1401_imgs.png)  
+然后点击next  
 ![images](../images/1401_images.png)  
 这里的GroupId和ArtifactID随意填写，但是ArtifactID最好和你的项目一名一样然后next  
 ![images](../images/1401_pngs.png)  
@@ -55,7 +55,7 @@ idea的maven在安装路径的plugins文件夹下，即X:\xxx\JetBrains\IntelliJ
 为了之后能够快速的下载依赖包，我们要加一个官方库的镜像，因为maven的官方仓库在国外，太慢了。  
 
 我们在你的.m2文件夹下的setting.xml中添加如下代码：  
-``` java
+``` xml
 <mirror>
     <id>alimaven</id>
     <mirrorOf>central</mirrorOf>
@@ -189,16 +189,16 @@ idea的maven在安装路径的plugins文件夹下，即X:\xxx\JetBrains\IntelliJ
 这个就是我们之后要配置的文件，先不用管。
 ##### 4、完善目录结构 
 
-首先我们在src/main文件夹下创建java文件夹，你会发现这个文件夹不能创建java的类文件和package，别急，先把必须的文件夹全部创建好。请按照下图创建文件夹 
+首先我们在src/main文件夹下创建java文件夹，你会发现这个文件夹不能创建java的类文件和package，别急，先把必须的文件夹全部创建好。请按照下图创建文件夹  
 ![images](../images/1401_logo.png)  
 
 然后我们进入project structure选择文件夹的作用，在界面的右上角进入project structure  
 ![images](../images/1401_str.png)  
 
-然后在module中选择设置各个模块，其中java文件夹是 sources，test是Test，改完之后，点ok，文件夹会变色，那就成功了。
+然后在module中选择设置各个模块，其中java文件夹是 sources，test是Test，改完之后，点ok，文件夹会变色，那就成功了。  
 ![images](../images/1401_mg2.png)  
 然后java文件夹中添加需要的包。最后的完整目录如下  
-![images](../images/1401_mg3.png)  
+![images](../images/1401_img03.jpg)  
 
 <!-- 之后导入jar包。  
 下面在WEB-INF里创建一个springmvc核心配置文件因为maven目录结构并不是严格的maven格式,少了java源码文件夹
