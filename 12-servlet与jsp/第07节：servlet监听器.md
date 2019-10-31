@@ -258,8 +258,111 @@ HttpSessionActivationListener该监听器用于监听在 Session 中存放的指
 类的对象能够被钝化。也就是说，对于字符串常量、基本数据类型常量等存放在 JVM 方法  
 区中常量池中的常量，是无法被钝化的。  
 对于监听 Session 中对象数据的钝化与活化，需要注意以下几点：  
+
 * 实体类除了要实现 HttpSessionActivationListener 接口外，还需要实现 Serializable 接口。
 * 钝化指的是 Session 中对象数据的钝化，并非是 Session 的钝化。所以 Session 中有几个可以钝化的对象，就会发生几次钝化。
 * HttpSessionActivationListener 监听器是不需要在 web.xml 中注册的。
-
+* 服务器重启用户session信息保存和恢复（服务器维护需要）  
 1.创建Person类实现HttpSessionActivationListener和Serializable接口：  
+
+``` java
+package com.boyikj;
+import  java.io.Serializable;
+import javax.servlet.http.HttpSessionActivationListener;
+import javax.servlet.http.HttpSessionEvent;
+
+public class Person implements HttpSessionActivationListener, Serializable {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+}
+
+```
+
+2.重写HttpSessionActivationListener接口中的方法：
+``` java 
+package com.boyikj;
+import  java.io.Serializable;
+import javax.servlet.http.HttpSessionActivationListener;
+import javax.servlet.http.HttpSessionEvent;
+
+public class Person implements HttpSessionActivationListener, Serializable {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public void sessionWillPassivate(HttpSessionEvent se) {
+        System.out.println("钝化"+se.getSession().getId());
+    }
+    @Override
+    public void sessionDidActivate(HttpSessionEvent se) {
+        System.out.println("活化"+se.getSession().getId());
+    }
+
+}
+```
+
+3.在index.jsp编写以下内容
+
+``` jsp
+ <%
+    Person p = new Person();
+    session.setAttribute("person", p);
+  %>
+```
+将数据持久化到硬盘中，
+
+4.在项目中的META-INF目录下创建一个content.xml的文件，在里面写上下面内容：
+
+``` xml
+<Context>
+    <Manager className="org.apache.catalina.session.PersistentManager" maxIdleSwap="1">
+        <Store className="org.apache.catalina.session.FileStore" directory="d:/a"/>
+    </Manager>
+</Context>  
+```
+
+通过上面的设置，可以将session钝化和活化。
+启动tomcat访问index.jsp文件(默认访问地址就是index.jsp)，之后正常关闭tomcat后可以看见控制台输出”钝化”。再次启动tomcat，可以看到控制台输出”活化”。  
+
+让服务器启动的时候读取或者配置server.xml(   <Host name="localhost"  appBase="webapps")改平台
+
+#### 解析xml文件
+
+自定义xml文件
+
+``` xml
+<context path="/项目名" docbase=" webroot右键+location(E:\javaEcilpose\onlineWeb\WebRoot)">
+<manager classname="org.apache.catalina.session.PersistentManager"   saveOnRestart="true"(是否保存) maxActiveSessions="1" (最大的session)>
+<Store className="org.apache.catalina.session.FileStore"(不能变化的) directory="d:/a"(数据存储的路径)>
+```
+
+自定义xml文件结束
+
+以上内容就是servlet监听器了，下一节学习的内容是servlet注解。
