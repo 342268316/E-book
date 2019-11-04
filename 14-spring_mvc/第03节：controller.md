@@ -17,45 +17,65 @@ public interface Controller {
 }
 ```
 
-1.新建一个Maven的Web项目，导入相应jar包，保险起见，同之前一样，也需要处理资源过滤问题！
+1.新建一个Maven的Web项目,配置同上一节的一样！
 
-2.配置web.xml 中的 DispatcherServlet ，同之前一样
+2.在WEB-INF文件下创建springmvc-servlet.xml文件
 
 3.配置springmvc-servlet.xml
 
-``` java
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-         http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context-4.3.xsd
-        http://www.springframework.org/schema/mvc
-        http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
+http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-4.2.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+http://www.springframework.org/schema/tx
+http://www.springframework.org/schema/tx/spring-tx-4.2.xsd
+http://www.springframework.org/schema/mvc
+http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
 
-    <!--=======SpringMVC_Start=======-->
-    <!-- 视图解析器 -->
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          id="internalResourceViewResolver">
-        <!-- 前缀 -->
-        <property name="prefix" value="/WEB-INF/jsp/" />
-        <!-- 后缀 -->
-        <property name="suffix" value=".jsp" />
+    <!-- 1、配置基于注解的映射器和适配器 -->
+    <mvc:annotation-driven/>
+
+    <!-- 处理静态资源 -->
+    <mvc:default-servlet-handler/>
+    <!-- <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
+    <mvc:resources location="/vue/" mapping="/vue/**"></mvc:resources>
+    <mvc:resources location="/js/" mapping="/js/**"></mvc:resources> -->
+
+    <!-- 2、视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"></property>
+        <!-- <property name="suffix" value=".jsp"></property> -->
     </bean>
-    <!--=======SpringMVC_END=======-->
+
+    <!-- 3、配置基于上下文进行组件扫描 -->
+    <context:component-scan base-package="web.example.controller"></context:component-scan>
+
+    <!-- 4、SpringMVC文件上传规定需配置 MultipartResolver处理器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8" />
+        <!-- 指定所上传文件的总大小,单位字节。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 -->
+        <property name="maxUploadSize" value="10485760" />
+    </bean>
 
 </beans>
 ```
 
 4.编写一个Controller类
 
-注意点：不要导错包，实现Controller接口，重写方法；
 
 ``` java
 //定义控制器
+// 根据红色代码提示Alt+Enter导包
 public class Test1Controller implements Controller {
     @Override
     public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
@@ -68,7 +88,7 @@ public class Test1Controller implements Controller {
 }
 ```
 
-编写完毕后，去Spring配置文件中注册请求的bean；name对应请求路径，class对应处理请求的类
+编写完毕后，去Spring配置文件中注册请求的bean；name对应请求路径，class对应处理请求的类的地址
 
 ``` java
 <bean name="/233" class="com.kuang.controller.Test1Controller"/>
@@ -83,6 +103,7 @@ public class Test1Controller implements Controller {
     <title>Kuangshen</title>
 </head>
 <body>
+//这里的传值是Test1Controller类里面的
     ${msg}
 </body>
 </html>
@@ -90,7 +111,7 @@ public class Test1Controller implements Controller {
 
 6.配置Tomcat运行测试，我这里没有项目发布名配置的就是一个 /，所以请求不用加项目名，OK！
 
-![images](../images/14-03_img.png)
+![images](../images/1403_img.png)
 
 实现接口Controller定义控制器是较老的办法，缺点是：一个控制器中只有一个方法，如果要多个方法则需要定义多个Controller；定义的方式比较麻烦；
 
@@ -100,11 +121,11 @@ public class Test1Controller implements Controller {
 Spring可以使用扫描机制来找到应用程序中所有基于注解的控制器类，为了保证Spring能找到你的控制器，需要在配置文件中声明组件扫描。
 
 ``` java
-<!-- 自动扫描指定的包，下面所有注解类交给IOC容器管理 -->
+<!-- 自动扫描指定的包，下面所有注解类交给IOC容器管理（之前编写springmvc-servlet.xml模板的时候已经写扫描了） -->
 <context:component-scan base-package="com.kuang.controller"/>
 ```
 
-修改我们的TestController类，使用注解实现；
+修改我们的Test1Controller类，使用注解实现；
 
 ``` java
 //@Controller注解的类会自动添加到Spring上下文中
@@ -136,7 +157,7 @@ public class Test1Controller{
 
 ``` java
 @Controller
-public class TestController {
+public class Test1Controller {
     @RequestMapping("/h1")
     public String test(){
         return "test";
@@ -151,7 +172,7 @@ public class TestController {
 ``` java
 @Controller
 @RequestMapping("/admin")
-public class TestController {
+public class Test1Controller {
     @RequestMapping("/h1")
     public String test(){
         return "test";
