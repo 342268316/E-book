@@ -111,7 +111,7 @@ public class Test1Controller implements Controller {
 
 6.配置Tomcat运行测试，我这里没有项目发布名配置的就是一个 /，所以请求不用加项目名，OK！
 
-![images](./../images/1403_img.png)
+![images](./../images/1403_return2.png)
 
 实现接口Controller定义控制器是较老的办法，缺点是：一个控制器中只有一个方法，如果要多个方法则需要定义多个Controller；定义的方式比较麻烦；
 
@@ -145,7 +145,7 @@ public class Test1Controller{
 
 运行tomcat测试
 
-![images](./../images/1403_images.png)
+![images](./../images/1403_return.png)
 
 
 可以发现，我们的两个请求都可以指向一个视图，但是页面结果的结果是不一样的，从这里可以看出视图是被复用的，而控制器与视图之间是弱偶合关系。
