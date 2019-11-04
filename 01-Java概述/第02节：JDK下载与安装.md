@@ -27,7 +27,7 @@ Jdk是java开发包，是java的开发工具包，里面包含了各种类库和
 ![JDK安装](../images/0102_jdkon.png)
 
 点击下载按钮（注不用在意大小只需根据自己系统需求下载即可，推荐下载exe文件）：
-![JDK安装](../images/0102installjdk.jpg)
+![JDK安装](../images/0102_installjdk.jpg)
 
 ### 二、安装
 
