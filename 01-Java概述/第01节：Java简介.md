@@ -1,5 +1,8 @@
 # 第01节：Java简介
 
+从本节开始我们就跨入到Java之路了，那么我们为什么学习Java呢？  
+我们学习Java的目的是利用JavaWEB，做出网页后端的效果。推荐有JS或Vue，PHP基础的同学再学Java会相对更简单一些。
+
 ### 一、Java语言发展史
 
 Java这门语言是由James Gosling创建的，现在Java有Oracle公司运营。
