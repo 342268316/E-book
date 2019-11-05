@@ -15,7 +15,7 @@ Restful api的实现脱离不了路由，这里我们的Restful api路由,由spr
 
 ### 开发及部署环境
 * 开发环境:Windows 7 ×64 英文版
-*             Intellij IDEA 2019.2
+*              Intellij IDEA 2019.2
 
 * 部署环境：JDK 8
 *              Tomcat 8.5.5
