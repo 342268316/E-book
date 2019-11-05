@@ -13,17 +13,8 @@
 ### 二、实现思路
 Restful api的实现脱离不了路由，这里我们的Restful api路由,由spring mvc的controller来实现。
 
-### 开发及部署环境
-* 开发环境:Windows 7 ×64 英文版
-*              Intellij IDEA 2019.2
-
-* 部署环境：JDK 8
-*              Tomcat 8.5.5
-
-* 测试环境：chrome
-*              fiddler
-
 ### 实现过程
+
 #### 1、搭建spring mvc maven项目
 这里的搭建步骤不再赘述，如有需要参考请复习前几章
 #### 2、新建控制器 StudentController
