@@ -9,7 +9,7 @@
 浏览器发送所有的请求都是去找Servlet的话，那么我就写一个Servlet，当访问这个Servlet的时候，就可以下载我这个图片资源了！
 
 ### 二、代码示例
-1、java的文件上传下载都是通过io流来完成的，既然要下载图片，首先要能够读取到,w它。（我这里是指定了具体了存储路径，然后从前端文件列表中将要下载文件的文件名传到ServletDownload,拿到文件具体路径，文件输入流读取资源）
+1、java的文件上传下载都是通过io流来完成的，既然要下载图片，首先要能够读取到它。（我这里是指定了具体了存储路径，然后从前端文件列表中将要下载文件的文件名传到ServletDownload,拿到文件具体路径，文件输入流读取资源）
 
 ``` java
 
@@ -35,7 +35,7 @@
 fileInputStream.read(byte [] b )
 ```
 从(来源)输入流中(读取内容)读取的一定数量字节数,并将它们存储到(去处)缓冲区数组b中,返回值为实际读取的字节数,运行一次读取一定的数量的字节数.java会尽可能的读取b个字节,但也有可能读取少于b的字节数.至少读取一个字节第一个字节存储读入元素b[0],下一个b[1],等等。读取的字节数是最多等于b的长度.如果没有可用的字节,因为已经到达流的末尾, -1返回的值
-
+``` java
         int len = 0;
         byte[] bytes = new byte[1024];
         ServletOutputStream  servletOutputStream = resp.getOutputStream();
@@ -45,3 +45,4 @@ fileInputStream.read(byte [] b )
         //关闭资源
         servletOutputStream.close();
         fileInputStream.close();
+```
