@@ -71,6 +71,7 @@ JSP全称是Java Server Pages，是一种动态网页技术，JSP其实就是在
 * session
 * config
 在开发或学习中，如果需要使用上面的这些java对象时，无需自己创建，直接拿来使用就是了。这九个JSP的内置对象一定要记住，有时面试的时候会问到。
+
 <!-- 在jsp技术中，有些变量是需要声明之后才能应用的，而有些变量不需要在jsp的脚本语言里声明就能够使用的，被称为jsp页面的内置对象，内置对象有request、response、session、application；下面逐个进行介绍。   -->
 
 <!-- 一、request对象  

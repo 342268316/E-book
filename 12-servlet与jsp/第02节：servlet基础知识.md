@@ -47,7 +47,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 如果servlet类报错，说明没有添加servlet相关模块，按如下操作添加模块。
 
 * 点击菜单 File => Project Structure
-* 选择Modules
+* 选择Modules，在tab中选择Dependencies。
 * 点击【+】选择Library，选择tomcat
 
 ### 三、编辑servlet类
@@ -75,3 +75,26 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 ```
 
 启动项目，访问http://localhost:8080/test，可以看到网页中显示hello servlet。
+
+### 三、获取请求参数
+
+通过request.getParameter()方法可以获取post请求和get请求的参数。
+
+``` java
+package com.xiaozhoubg;
+
+import java.io.IOException;
+
+public class Test extends javax.servlet.http.HttpServlet {
+    protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+        String p = request.getParameter("username");
+        response.getWriter().write(p);
+    }
+
+    protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
+        String p = request.getParameter("query");
+        response.getWriter().write(p);
+    }
+}
+
+```
