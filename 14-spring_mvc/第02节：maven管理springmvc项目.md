@@ -176,7 +176,7 @@ idea的maven在安装路径的plugins文件夹下，例如我的C:\Program Files
 然后我们进入project structure选择文件夹的作用，在界面的右上角进入project structure  
 ![images](../images/1401_str.png)  
 
-然后在module中选择设置各个模块，其中java文件夹是 sources，改完之后，点ok，文件夹会变蓝色，那就成功了。    
+然后在module中选择设置各个模块，其中java文件夹是 sources，改完之后，点ok，文件夹会变蓝色，那就成功了。  
 然后java文件夹中添加需要的包。最后的完整目录如下  
 ![images](../images/1403_mulu2.png)  
 
