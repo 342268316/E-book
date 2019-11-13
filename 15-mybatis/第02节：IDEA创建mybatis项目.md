@@ -3,7 +3,6 @@
 ### 创建项目模板
 
 咱们创建的项目可以是quickstart模板和webapp模板都可以，我这里用的是quickstart模板。咱们创建第一个项目根本不需要webapp，而且其中的POJO文件和resource文件夹都不是自动生成，而是自己创建的。
-sd
 
 
 //创建数据库，test;
