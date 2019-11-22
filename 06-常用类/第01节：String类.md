@@ -1,8 +1,11 @@
 # 第 01 节：String 类
 
-### 一、字符串的不可变性
+### 一、字符串类概念
 
-本节我们来学习常用类中的 String 类（字符串类）。String 类在 java.lang 包下面，是 Object 类的直接子类，通过 API 或者源码可以看到，String 类是 final 修饰的，这说明 String 类不能被继承。
+接下来我们学习Java常用类中的String类，字符串类。  
+String 类是在Java包中的 java.lang 包下面，是 Object 类的直接子类，通过 API 或者源码可以看到，String 类是 final 修饰的，这说明 String 类不能被继承。
+
+### 一、字符串的不可变性
 
 字符串一旦创建好之后，里面的内容是不能被修改的，jvm 会将双引号””中的内容存放在称作"常量池"的里面，常量池中的对象内容是不可修改的。
 
@@ -164,3 +167,104 @@ public class Main {
 - StringBuilder 是 jdk5 版本加入的，是线程不安全的，效率高
 
 以上就是String类的知识了，那么下一节我们来学习另一个常用类，包装类。
+
+### 六、案例及作业
+
+为了能让大家更深刻的学会循环语句的使用方法，这里给大家布置三项作业：
+
+案例链接
+
+> 1.字符串反转，例如将"abc"变成"cba"
+
+> 2.统计一个字符串里面另一个字符串出现的次数，例如统计"xiaozhou"在"xiaozhoubg.com java xiaozhou dian zi shu"中出现的次数
+
+> 3.统计一个字符串中大写字母出现的次数
+
+---
+
+答案解析：  
+
+第一题  
+
+字符串是由多个字符组成的，可以将字符串转换为字符（char）数组，然后倒序遍历数组即可
+
+``` java
+import java.util.Scanner;
+
+/**
+ * 字符串反转
+ *
+ */
+public class Exercise01 {
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+        String input = s.next();
+        //将输入的字符串转换为char类型数组
+        char[] charArray = input.toCharArray();
+        //遍历数组并倒着输出
+        for(int i=charArray.length-1; i>=0; i--){
+            System.out.print(charArray[i]);
+        }
+    }
+}
+```
+
+第二题  
+
+通过indexOf方法在大的字符串中查找小字符串的索引值，找到后将这个索引值和小字符串的长度相加，之后将大的字符串截取根据相加的结果截取子串，然后继续在剩下的字符串中查找小字符串的索引值，直到索引值返回-1为止  
+
+``` java
+/**
+ * 统计一个字符串里面另一个字符串出现的次数
+ *
+ */
+public class Exercise02 {
+
+    public static void main(String[] args) {
+        String src = "I am monkey1024.monkey like banana.little monkey is smart.";
+        String dest = "monkey";
+        //定义出现的次数
+        int count = 0;
+
+        //定义索引值
+        int index = 0;
+
+        while((index = src.indexOf(dest)) != -1){
+            count++;
+            //将src截取子串
+            src = src.substring(index + dest.length());
+        }
+        System.out.println("出现的次数是：" + count);
+    }
+}
+```
+
+第三题  
+
+每个大写字母都是一个字符char，而大写字母A~Z是有范围的，只要统计这个范围内的字符即可
+
+``` java
+public class Exercise03 {
+
+    public static void main(String[] args) {
+        String src = "xiaozhoubg";
+        //统计大写字母出现的次数
+        int count = 0;
+
+        //将字符串转换为字符数组
+        char[] c = src.toCharArray();
+        for(int i=0; i<c.length; i++){
+            //判断是否为大写字母
+            if(c[i] >= 'A' && c[i] <= 'Z'){
+                count++;
+            }
+        }
+        System.out.println("大写字母出现的次数：" + count);
+    }
+}
+```
+
+### 七、总结
+
+以上就是String类型全部内容了，下一节我们学习包装类。
