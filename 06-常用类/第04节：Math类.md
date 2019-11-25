@@ -1,11 +1,13 @@
 # 第04节：Math类型
 
+### 一、什么是Math类？
 
-### Math类概述
  本节我们学习常用类中的Math类，这个类包含用于执行基本数学运算的方法，如四舍五入，开方等等。
 
-### Math类型的重要属性
-让我们通过以下代码来学习掌握Math类关键字方法的使用[代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC04%E8%8A%82%EF%BC%9AMath%E7%B1%BB/Math/MathTest01.java)：  
+### 二、Math类型的重要属性
+
+让我们通过以下代码来学习掌握Math类关键字方法的使用[案例链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC04%E8%8A%82%EF%BC%9AMath%E7%B1%BB/Math/MathTest01.java)：  
+
 ```java
 public static void main(String[] args){
         //圆周率
@@ -32,7 +34,6 @@ public static void main(String[] args){
         System.out.println(Math.random());
         //生成0到100之间的随机整数,包括0,不包括100
         System.out.println(Math.floor(Math.random()*100));
-        
         //四舍五入
         System.out.println(Math.round(12.3f));
         System.out.println(Math.round(12.9f));
@@ -42,4 +43,8 @@ public static void main(String[] args){
     }
 
 ```
-相信大家看完这个案例已经学会Math类型了，接下来我们学习常用类中的Random类。
+
+### 三、总结
+
+Math类很简单，相信同学们可以根据案例学会了。  
+接下来我们学习常用类中的Random类（随机数类）。

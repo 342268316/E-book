@@ -172,7 +172,6 @@ public class Main {
 
 为了能让大家更深刻的学会循环语句的使用方法，这里给大家布置三项作业：
 
-案例链接
 
 > 1.字符串反转，例如将"abc"变成"cba"
 
@@ -222,8 +221,8 @@ public class Exercise01 {
 public class Exercise02 {
 
     public static void main(String[] args) {
-        String src = "I am monkey1024.monkey like banana.little monkey is smart.";
-        String dest = "monkey";
+        String src = "xiaozhoubg.com java";
+        String dest = "o";
         //定义出现的次数
         int count = 0;
 

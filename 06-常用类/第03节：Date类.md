@@ -1,19 +1,24 @@
 # 第03节：Date类型
 
+**在我们的日常工作中难免会有和时间有关系的代码，所以我们本节来学习date类，也叫时间类。**  
+
 ### 一、获取时间戳
 
-在我们的日常工作中难免会有和时间有关系的代码，所以我们本节来学习date类，也叫时间类。  
-
-下面代码可以获取自 1970年1月1日 00时00分00秒 000毫秒 到当前共有多长时间[代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/DateTest01.java)：  
+下面代码可以获取自 1970年1月1日 00时00分00秒 000毫秒 到当前共有多长时间[案例链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/DateTest01.java)：  
 
 ``` java
-long now = System.currentTimeMillis(); 
+long now = System.currentTimeMillis();
 System.out.println(now);
 ```
+
 System.currentTimeMillis()会返回long类型值，这段代码会获取从 1970年1月1日 00时00分00秒 000毫秒 到当前的毫秒数  
 
-### 二、获取拼接一百个字符串所需要的时间
+### 二、入门案例
+
+#### 获取拼接一百个字符串所需要的时间
+
 以下代码可以获取到一百个字符串所需要的时间，相信同学们学会这个代码以后会更加的熟悉date类的使用方法，并且更加了解拼接字符串为什么要用StringBuffer[代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/DateTest01.java)：  
+
 ``` java
     public static void main(String[] args){
         String s = "";
@@ -34,10 +39,13 @@ System.currentTimeMillis()会返回long类型值，这段代码会获取从 1970
         System.out.println(after - before);
     }
 ```
+
 通过以上代码我们可以发现StringBuffer的拼接速度比String快很多，这仅仅是一百个字符串，所以拼接字符串要用StringBuffer关键字。
 
-### 三、日期格式化
-通过如下代码可以更改输出的日期格式[代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/DateTest02.java)：
+### 三、日期标准格式写法
+
+通过如下代码可以更改输出的日期格式[案例链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/DateTest02.java)：
+
 ``` java
     public static void main(String[] args){
         //输出当前日期，输出结果是今天这个时间
@@ -56,8 +64,11 @@ System.currentTimeMillis()会返回long类型值，这段代码会获取从 1970
 
     }
 ```
+
 ### 四、将String类型转换为Date类型
+
 如下代码可以将字符串类型的日期转换成Date类型，但是注意，字符串的格式和日期格式一定要相同：  
+
 ``` java
     public static void main(String[] args) {
         String strTime = "2017年01月01日 00:00:00 000";
@@ -77,8 +88,11 @@ System.currentTimeMillis()会返回long类型值，这段代码会获取从 1970
     }
 
 ```
+
 ### 五、Calendar,另一种日期方法
+
 Calendar方法为操作日历方面提供了一些方法，请看如下代码[代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/DateTest03.java)：  
+
 ``` java
  //输出今天是这周的第几天
     Calendar c= Calendar.getInstance();
@@ -95,10 +109,22 @@ Calendar方法为操作日历方面提供了一些方法，请看如下代码[�
     System.out.println(c.get(Calendar.DAY_OF_YEAR));
 ```
 
-### 代码实例
-接下来我们做一个小练习：算一下你来到这个世界多少天?  
+### 六、案例作业
 
-分析：获取出生日期和当前日期的Date类型，然后将两个日期的毫秒值做减法，之后用这个毫秒值除以1000,再除以60,再除以60,再除以24得到天。[代码链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/Exercise01.java)  
+为了能让大家更透彻的掌握Date类，这里给大家布置一项作业：
+
+[案例链接](https://github.com/xiaozhoulee/java-examples/blob/master/06-%E5%B8%B8%E7%94%A8%E7%B1%BB/%E7%AC%AC03%E8%8A%82%EF%BC%9ADate%E7%B1%BB/Date/Exercise01.java)
+
+> 1.算一下你来到这个世界多少天?  
+
+---
+
+答案解析：  
+
+第一题  
+
+获取出生日期和当前日期的Date类型，然后将两个日期的毫秒值做减法，之后用这个毫秒值除以1000,再除以60,再除以60,再除以24得到天。
+
 ``` java
 public class Exercise01 {
     public static void main(String[] args) throws ParseException {
@@ -117,4 +143,7 @@ public class Exercise01 {
     }
 }
 ```
+
+### 七、总结
+
 通过以上实例相信我们已经了解了时间类的应用，接下来我们学习常用类中的Math类。
