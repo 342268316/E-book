@@ -1,11 +1,35 @@
-# 第04节：cookie与seesion
+# 第05节：cookie与seesion
 
+上一节我们学习了注解写法，本节我们学习cookie与seesion。
 
-### 一、cookie简介  
+### 一、为什么要使用cookie？  
 
 http协议是无状态的，也就是说我们访问同一个网站的a页面和b页面，这两次访问是毫无关系的。但是如果我们访问一个电商网站，在登录页输入我们的用户名和密码，在购物车页面就可以看到我们希望买的商品了，既然http协议是无状态的，那么网站是如何知道登录页和购物车页是有关联的呢，这就需要用到cookie了。
 
-cookie报错在我们的浏览器中，当午门访问一个路径，例如 /test 我们后台可以给这次响应条件一个cookie，然后我们再次访问这个网站的其他页面，例如/book，就都会带着这个cookie了，示例代码如下所示，我们分别在两个Servlet类中设置cookie和读取cookie
+### 二、怎么使用cookie？
+
+cookie报错在我们的浏览器中，当我们访问一个路径，例如 /test 我们后台可以给这次响应条件一个cookie，然后我们再次访问这个网站的其他页面，例如/book，就都会带着这个cookie了，示例代码如下所示，我们分别在两个Servlet类中设置cookie和读取cookie
+
+### 三、JavaEE中的cookie技术
+在javax.servlet.http包下有个名为Cookie的类，通过该类就可以向客户端设置cookie数据了。  
+
+举个简单的小例子：
+
+``` java
+//        1.创建Cookie对象
+        Cookie c =new Cookie("msg","hello");
+//        2.发送Cookie
+        response.addCookie(c);
+//        3.获取cookie
+        Cookie[] cs =request.getCookies();
+        //获取数据遍历
+        if(cs !=null){
+            for (Cookie c: cs){
+                String name =c.getName();
+                String value =c.getValue();
+                System.out.println(name+":"+value);
+            }
+```
 
 ``` java
 //Test servlet写cookie

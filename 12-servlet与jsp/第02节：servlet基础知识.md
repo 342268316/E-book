@@ -1,7 +1,9 @@
 # 第02节：servlet基础知识
 
 ### 一、创建servlet类
+
 上节我们了解了servlet概述和启动项目，本节我们来学习一下如何编辑servlet类
+
 * 右键点击src目录 new => package 创建一个包（例如com.xiaozhoubg）
 * 右键点击包目录 new => servlet创建之后代码如下所示。
 
@@ -23,6 +25,9 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 
 ```
 
+图中红色报错信息选择自动下载相关模块，如下图所示：
+![add](..\images/1202_redadd.png)
+
 * 同时修改web->WEB-INF->web.xml文件如下所示：
 
 ``` xml
@@ -35,22 +40,17 @@ public class Servlet extends javax.servlet.http.HttpServlet {
         <servlet-name>Servlet</servlet-name>
         <servlet-class>com.xiaozhoubg.Servlet</servlet-class>
     </servlet>
+<!-- 写入servle映射模块↓ -->
     <servlet-mapping>
         <servlet-name>Servlet</servlet-name>
+        <!-- servlet-name 这个标签里面填写的是文件的名字 -->
         <url-pattern>/test</url-pattern>
+        <!-- url-pattern 这个标签里填写的是servlet网页跳转地址 -->
     </servlet-mapping>
 </web-app>
 ```
 
-### 二、引入servlet相关类
-
-如果servlet类报错，说明没有添加servlet相关模块，按如下操作添加模块。
-
-* 点击菜单 File => Project Structure
-* 选择Modules，在tab中选择Dependencies。
-* 点击【+】选择Library，选择tomcat
-
-### 三、编辑servlet类
+### 二、编辑servlet类
 
 修改servlet类如下所示,可以处理常用的请求方法：
 
@@ -59,7 +59,7 @@ package com.xiaozhoubg;
 import java.io.IOException;
 public class Servlet extends javax.servlet.http.HttpServlet {
     // 接收post请求
-    protected void doPost(javax.servlet.http.HttpServletRequest request, 
+    protected void doPost(javax.servlet.http.HttpServletRequest request,
     javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         doGet(request,response);
     }
@@ -76,7 +76,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 
 启动项目，访问http://localhost:8080/test，可以看到网页中显示hello servlet。
 
-### 三、获取请求参数
+<!-- ### 三、获取请求参数
 
 通过request.getParameter()方法可以获取post请求和get请求的参数。
 
@@ -85,7 +85,7 @@ package com.xiaozhoubg;
 
 import java.io.IOException;
 
-public class Test extends javax.servlet.http.HttpServlet {
+public class Servlet extends javax.servlet.http.HttpServlet {
     protected void doPost(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         String p = request.getParameter("username");
         response.getWriter().write(p);
@@ -97,4 +97,10 @@ public class Test extends javax.servlet.http.HttpServlet {
     }
 }
 
-```
+``` -->
+
+### 三、总结
+
+本节我们利用servlet+tomcat启动了项目并且在网页上打印出了hello servlet。  
+
+下一节我们学习jsp，学习jsp后我们再进一步学习servlet。
