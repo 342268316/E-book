@@ -5,9 +5,9 @@
 ### 一、创建项目
 
 1. 打开idea软件，点击界面上的Create New Project  
- ![Image text](..\images\0103_create.png)
+ ![Image text](..\images\0104_create.png)
 2. 出现以下界面，选中Java，然后选择jdk，最后点击Next，进行下一步  
- ![Image text](..\images/0103_create2.png)  
+ ![Image text](..\images/0104_create2.png)  
 3. 这里是选择生成项目时是否创建java文件，勾选上Java Hello World后会生成一个默认的Hello world文件，点击Next进行下一步  
  ![Image text](..\images/0103_create3.png)  
 4. 给项目命名，默认是untiled，自己填个名字吧，最后点击finish  
@@ -16,10 +16,11 @@
 
 ### 二、创建类与运行项目
 
- 1. 点击src——>new——>package，创建一个文件包，并给包命名一般命名都是项目的网址倒叙，比如：com.xiaozhoubg
- ![Image text](..\images/0103_create5.png)  
+ 1. 鼠标右键点击src——>new——>package，创建一个文件包，并给包命名，
+   **在真正项目中一般命名都是项目的网址倒叙，比如：com.xiaozhoubg**
+ ![Image text](..\images/0104_create5.png)  
  2. 在包下面创建java类文件，右键点击包名——>New——>Java Class;  
- ![Image text](..\images/0103_create6.png)  
+
  3. 写入代码  
 
    ``` java
@@ -31,8 +32,8 @@
  1. 运行java文件，点击上方工具栏中的Run——>Run......;
 
  出现以下弹框，点击要运行的文件名，这里是Hello;
- ![Image text](..\images/0103_status.png)  
- ![Image text](..\images/0103_status2.png) 
+ ![Image text](..\images/0104_status.png)  
+ ![Image text](..\images/0104_status2.png)
 
  1. 运行成功 控制台中输出Hello World!
 
@@ -69,7 +70,7 @@ System.out.println("xiaozhoubg.com");
 
 ### 五、注释
 
-代码中有一部分用作程序的备注，这些内容不被执行，这些注释里的内容是给开发者看的
+代码中有一部分用作程序的备注，这些内容不被执行，这些注释里的内容是给开发者看的。
 
 * 单行注释
 ``` js

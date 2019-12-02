@@ -54,6 +54,7 @@ idea是当前最受欢迎Java 编辑软件，本电子书的所有代码都是�
 4. 重新启动你的IDEA。  
 注册"Help" -> “Register”，选择License server方式，地址填入：http://jetbrains-license-server （应该会自动填上）确定后重启IDEA，看到Licensed to 用户名，即激活成功。  
 
+### 六、IDEA主题切换
 ### 六、总结
 
 到现在为止我们已经安装好了idea软件，配置了jdk环境。环境搭建完成，已经可以写java代码了，下一节我们将会学习创建一个java案例。
