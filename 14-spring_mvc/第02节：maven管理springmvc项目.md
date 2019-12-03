@@ -1,5 +1,7 @@
 # 第03节:maven管理SpringMVC项目
 
+上一章学了maven，那本节就来实现maven管理SpringMVC项目吧。
+
 ### 一、为什么要使用maven来管理SpringMVC项目？
 
 * 通过maven这个代码管理工具，可以随时添加SpringMVC的依赖。以后深入开发中会发现方便很多。
@@ -12,15 +14,15 @@
 
 新建一个maven project，并且选择webapp原型。  
 
-![images](../images/1401_imgs.png)  
+![images](..\images/1401_imgs.png)  
 
 然后点击next  
 
-![images](../images/1401_images.png)  
+![images](..\images/1401_images.png)  
 
 这里的GroupId和ArtifactID随意填写，ArtifactId是项目名称，GroupId一般写项目网址的倒叙，例如com.xiaozhoubg  
 
-![images](../images/1401_pngs.png)  
+![images](..\images/1401_pngs.png)  
 
 为了快一点创建，我们添加一个属性值，如图中亮的所示，点右边的加号，**name=archetypeCatalog value=internal**。当然也可以不添加属性值，只不过项目开始时下载的依赖会慢一点。  
 
@@ -40,10 +42,10 @@ idea的maven在安装路径的plugins文件夹下，例如我的C:\Program Files
 ```
 
 具体位置如下图所示:  
-![images](../images/1401_jpg.png)  
+![images](..\images/1401_jpg.png)  
 这个是阿里的库，所以很快。做完之后我们回到idea，点击next，然后填写项目名，然后finish。  
 接下来idea开始创建项目，这里你要把maven自动导入打开。  
-![images](../images/1401_imgimg.png)  
+![images](..\images/1401_imgimg.png)  
 
 等待导入完成...  
 这样我们的项目初始的框架就弄好了。  
@@ -146,22 +148,22 @@ idea的maven在安装路径的plugins文件夹下，例如我的C:\Program Files
 
 配置完pom.xml之后，我们在idea中要添加一下框架的支持。  
 右击我们的项目文件夹，选择add framework support  
-![images](../images/1401_sg.png)  
+![images](..\images/1401_sg.png)  
 然后在窗口中分别选中spring和springmvc，记得勾选springconfig.xml。  
 
-![images](../images/1401_sg2.png)  
+![images](..\images/1401_sg2.png)  
 
 * 这里有一个注意点！如果add framework support选项中没有springmvc选项是因为创建项目的时候，
   项目本身自带了springmvc的配置，但是项目中自带的springmvc并不齐全,所以说我们要先删除项目
   中的springmvc再重新在add framework support中配，具体如何删除，请看下图指示。
 
-![images](../images/1403_delmvc.png)  
+![images](..\images/1403_delmvc.png)  
 
 这时候add framework support选项中才会出现springmvc  
 
 接下来点击ok之后，我们会发现WEB-INF文件夹下多出了两个文件。  
 
-![images](../images/1401_sg3.png)  
+![images](..\images/1401_sg3.png)  
 
 这两个文件就是我们之后要配置的文件，先不用管。  
 
@@ -171,14 +173,14 @@ idea的maven在安装路径的plugins文件夹下，例如我的C:\Program Files
 
 首先我们在src/main文件夹下创建java文件夹，你会发现这个文件夹不能创建java的类文件和package，别急，先把必须的文件夹全部创建好。请按照下图创建文件夹  
 
-![images](../images/1403_mulu.png)  
+![images](..\images/1403_mulu.png)  
 
 然后我们进入project structure选择文件夹的作用，在界面的右上角进入project structure  
-![images](../images/1401_str.png)  
+![images](..\images/1401_str.png)  
 
 然后在module中选择设置各个模块，其中java文件夹是 sources，改完之后，点ok，文件夹会变蓝色，那就成功了。  
 然后java文件夹中添加需要的包。最后的完整目录如下  
-![images](../images/1403_mulu2.png)  
+![images](..\images/1403_mulu2.png)  
 
 * Java里面写控制器代码
 * statics里面放静态文件
