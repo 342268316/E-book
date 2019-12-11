@@ -51,4 +51,4 @@ SpringMVC不仅仅是MVC的实现，它还是一个框架。这意味着，除�
 
 ### 五、总结
 
-我们对SpringMVC有个概念性了解了，接下来我们学习具体如何写SpringMVC。
+我们对SpringMVC有个概念性了解了，接下来我们学习maven管理SpringMVC项目。

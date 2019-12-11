@@ -29,3 +29,6 @@
 ### 三、总结
 
 maven项目创建完毕，后面的章节中我们会基于maven这个框架来写项目。
+
+比如用maven管理ssm架构。及springMVC+sping+mybatis。这个后面会讲。
+
