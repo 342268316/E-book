@@ -208,5 +208,5 @@ public class UserDaoTest {
 
 ### 六、总结
 
-[案例地址]()
+[案例地址](https://github.com/xiaozhoulee/java-examples/tree/master/15-mybatis/第03节%EF%BC%9A数据库操作(CRDU)/untitled1)
 以上就是增删改查数据库内容的代码了，下一节学习
