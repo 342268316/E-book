@@ -98,7 +98,7 @@ public class UserDaoTest {
 
 运行会在控制台打印出对应ID的那条数据
 
-![yx](..\images/1502_jg1.png)
+![yx](../images/1502_jg1.png)
 
 ### 三、增加数据
 
