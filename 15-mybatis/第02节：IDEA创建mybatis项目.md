@@ -281,7 +281,7 @@ public class UserDaoTest {
 
 run执行这个方法
 
-![run](..\images/1502_jg.png)
+![run](../images/1502_jg.png)
 
 ### 四、总结
 
