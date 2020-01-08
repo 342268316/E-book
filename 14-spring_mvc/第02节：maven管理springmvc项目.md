@@ -22,7 +22,7 @@
 
 这里的GroupId和ArtifactID随意填写，ArtifactId是项目名称，GroupId一般写项目网址的倒叙，例如com.xiaozhoubg  
 
-![images](..\images/1401_pngs.png)  
+![images](../images/1401_pngs.png)  
 
 为了快一点创建，我们添加一个属性值，如图中亮的所示，点右边的加号，**name=archetypeCatalog value=internal**。当然也可以不添加属性值，只不过项目开始时下载的依赖会慢一点。  
 
@@ -42,10 +42,10 @@ idea的maven在安装路径的plugins文件夹下，例如我的C:\Program Files
 ```
 
 具体位置如下图所示:  
-![images](..\images/1402_seettings.png)  
+![images](../images/1402_seettings.png)  
 这个是阿里的库，所以很快。做完之后我们回到idea，点击next，然后填写项目名，然后finish。  
 接下来idea开始创建项目，这里你要把maven自动导入打开。  
-![images](..\images/1402_Ena.png)  
+![images](../images/1402_Ena.png)  
 
 等待导入完成...  
 这样我们的项目初始的框架就弄好了。  
@@ -54,18 +54,18 @@ idea的maven在安装路径的plugins文件夹下，例如我的C:\Program Files
 
 1. 首先我们在src/main文件夹下创建java文件夹和resources文件夹，你会发现右击这个文件夹不能创建java的类文件和package，别急，先把必须的文件夹全部创建好。请按照下图创建文件夹  
 
-![images](..\images/1402_mulu.png)  
+![images](../images/1402_mulu.png)  
 
 2. 右键点击如图  
 
-![images](..\images/1402_mulu2.png)  
+![images](../images/1402_mulu2.png)  
 
 > 将java标记为Sources Root
 > 将resources标记为Resources Root
 
 3. 继续完善目录
 
-![images](..\images/1402_mulu3.png)  
+![images](../images/1402_mulu3.png)  
 
 * 标记为Sources Root的意思是将java文件夹标记为源文件夹，所有的类都写在这里
 * 标记为Resources Root的意思是标记为配置文件，后续会在该文件里面编写SpringMVC的配置文件
@@ -152,7 +152,7 @@ idea的maven在安装路径的plugins文件夹下，例如我的C:\Program Files
 
 首先在我们之前创建好的resources配置文件夹中创建springmvc配置文件，如图
 
-![config](..\images/1402_spcof.png)
+![config](../images/1402_spcof.png)
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -229,7 +229,7 @@ public class ControllerTest01 {
 3. 在pages中编写success.jsp文件，内容自拟
 
 接下来配置tomcat启动服务器后启动tomcat。
-![wancheng](./..\images/1402_img5.png)  
+![wancheng](./../images/1402_img5.png)  
 点击跳转链接会跳转到success.jsp文件，并且在idea控制台中打印"hello"
 
 至此springMVC成功入门
