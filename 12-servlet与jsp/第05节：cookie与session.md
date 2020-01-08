@@ -106,7 +106,7 @@ public class CookieReceive extends HttpServlet {
 
 我们先进入网址http://localhost:8080/test/cookie01。这时候网页会带上cookie。下图是谷歌浏览器查看cookie方法。
 
-![浏览器中的cookie](..\images\1205_chcookie.png)
+![浏览器中的cookie](../images\1205_chcookie.png)
 
 接下来再进入网址http://localhost:8080/test/cookie02。这时候会在IDEA的控制台打印出获取到的cookie。
 

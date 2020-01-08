@@ -21,7 +21,7 @@ Servlet 通常情况下与使用 CGI（Common Gateway Interface，公共网关�
 
 * 在IDEA中点击File => New => Project
 * 勾选Java EE中的Web Application
-  ![创建项目](..\images/1201_create.png)
+  ![创建项目](../images/1201_create.png)
 * next一直到创建完成
 
 ### 三、启动服务器
@@ -31,7 +31,7 @@ Servlet 通常情况下与使用 CGI（Common Gateway Interface，公共网关�
 * 在IDEA中点击run菜单，选择Edit Configurations
 * 点击左上角的【+】，选择Tomcat Server => Local
 * 右侧deployment中点击fix，然后将Application context修改为【/】
-  ![run](..\images/1201_run.png)
+  ![run](../images/1201_run.png)
 * 上一章的第03节配置过Configuration这个选项了，所以这一次应该会自动填写上
   
 #### 将服务器启动

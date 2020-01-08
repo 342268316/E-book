@@ -35,7 +35,7 @@ INSERT  INTO `books`(`bookID`,`bookName`,`bookCounts`,`detail`)VALUES
 
 ### 三、创建项目并导入pom依赖
 
-![cr](..\images/1702_cre.png)
+![cr](../images/1702_cre.png)
 
 咱们新创建一个maven项目，添加webapp模板的支持。
 
@@ -190,7 +190,7 @@ INSERT  INTO `books`(`bookID`,`bookName`,`bookCounts`,`detail`)VALUES
 
 我的目录结构如图
 
-![ml](..\images/1702_ml.png)
+![ml](../images/1702_ml.png)
 
 ### 五、Mybatis层编写
 

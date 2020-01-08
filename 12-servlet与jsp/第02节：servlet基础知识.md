@@ -26,7 +26,7 @@ public class Servlet extends javax.servlet.http.HttpServlet {
 ```
 
 图中红色报错信息选择自动下载相关模块，如下图所示：
-![add](..\images/1202_redadd.png)
+![add](../images/1202_redadd.png)
 
 * 同时修改web->WEB-INF->web.xml文件如下所示：
 

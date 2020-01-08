@@ -74,11 +74,11 @@ JSP全称是Java Server Pages，是一种动态网页技术，JSP其实就是在
 ### 五、jsp中的内置对象
 
 为了便于开发者的使用，在JSP引擎将JSP翻译为.java文件时，会提供9个与web开发相关的对象被称为JSP中9个内置对象，开发者在JSP中可以直接使用这些对象调用的方法，这九个内置对象的引用名分别是：pageContext，request,session,application,response,config,out,page,exception。  
-![dx](..\images/1203_dx.png)  
+![dx](../images/1203_dx.png)  
 通过查看源码可以看到这些对象的定义。  
 有的内置对象咱们已经用过了，比如out输出流对象。
 而有些内置对象开发中基本不会使用。
-![dx](..\images/1203_ym.png)  
+![dx](../images/1203_ym.png)  
 
 * pageContext
 页面上下文，通过该对象中的setAttribute和getAttribute方法设置访问范围只在当前页面中有效的数据，不过在当前页面范围中，数据都是可以直接使用的，所以该对象不常用

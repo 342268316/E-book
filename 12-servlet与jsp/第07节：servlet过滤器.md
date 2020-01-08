@@ -111,11 +111,11 @@ public class MyFilter implements javax.servlet.Filter {
 
 1. 创建user和test的jsp文件。内容自己随便写。
 
-![jsp目录](..\images/1207_demoimg.png)
+![jsp目录](../images/1207_demoimg.png)
 
 2. 创建Filter文件
 
-![create](..\images/1207_create.png)
+![create](../images/1207_create.png)
 
 ``` java
 

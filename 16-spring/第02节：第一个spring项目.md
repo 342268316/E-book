@@ -32,7 +32,7 @@
 
 首先给大家看一下我的目录
 
-![1602_mulu](..\images/1602_mulu.png)
+![1602_mulu](../images/1602_mulu.png)
 
 创建接口
 
