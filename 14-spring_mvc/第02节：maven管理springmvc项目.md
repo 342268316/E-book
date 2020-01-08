@@ -14,11 +14,11 @@
 
 新建一个maven project，并且选择webapp原型。  
 
-![images](..\images/1401_imgs.png)  
+![images](../images/1401_imgs.png)  
 
 然后点击next  
 
-![images](..\images/1401_images.png)  
+![images](../images/1401_images.png)  
 
 这里的GroupId和ArtifactID随意填写，ArtifactId是项目名称，GroupId一般写项目网址的倒叙，例如com.xiaozhoubg  
 
